@@ -1,3 +1,18 @@
+@keyframes color-flux {
+  0% {
+    background-color: $hilight-color;
+  }
+
+  50% {
+    background-color: mix($hilight-color, $game-color, 75%)
+  }
+
+  100% {
+    background-color: $hilight-color;
+  }
+
+}
+
 @keyframes flip-in-y {
   0% {
     -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
@@ -45,7 +60,7 @@
 
 @keyframes wobble {
   0% {
-    transform: translate(-50%, -50%);;
+    transform: translate(-50%, -50%);
   }
 
   60% {
@@ -57,6 +72,10 @@
   100% {
     transform: translate(-50%, -50%);
   }
+}
+
+.main-container {
+  animation: color-flux 9s infinite;
 }
 
 

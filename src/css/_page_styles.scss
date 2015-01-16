@@ -11,21 +11,42 @@
 
 // Giving the Initial Page Colors and Styles
 
-.main-container {
+.main-container,
+.new-game-container {
     background-color: $hilight-color;
-    height: 100%;
     width: 100%;
     position: absolute;
     padding: 3em;
+
 }
 
-.new-game {
+.main-container {
+  height: 100%;
+}
+
+.easy-game-container:after {
+  content: " ";
+  display: block;
+  height: 100%;
+}
+
+.easy-game-wrapper {
+  background-color: $game-color;
+  padding-bottom: 2em;
+}
+
+.game-box {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.new-game-container {
   background-color: $game-color;
 }
 
 
 // Lay out game options using translate to help center the main options
-.game-options, .new-game {
+.game-options, .new-game-container {
   text-align: center;
 }
 
@@ -77,7 +98,6 @@
   width: 100%;
 }
 
-
 .game-tile {
   font-size: 2em;
   position: relative;
@@ -92,6 +112,12 @@
   width: 16.666%;
   padding-top: 16.666%;
 
+  // making adjustments for page width changes
+  @media only screen and (max-width: 768px) {
+    width: 33.333%;
+    padding-top: 33.333%;
+  }
+
 }
 
 
@@ -100,6 +126,7 @@
   height: 0;
   width: 0;
   z-index: -2;
+  opacity: 0;
 }
 
 .game-card {
@@ -113,3 +140,8 @@
   background: #7986cb;
 
 }
+
+
+/*                    *\
+    MEDIA QUERIES
+\*                    */
