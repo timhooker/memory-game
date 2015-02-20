@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "memory-game";
+  src:url("../fonts/memory-game.eot");
+  src:url("../fonts/memory-game.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/memory-game.woff") format("woff"),
+    url("../fonts/memory-game.ttf") format("truetype"),
+    url("../fonts/memory-game.svg#memory-game") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "memory-game" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "memory-game" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cup:before {
+  content: "1";
+}
+.icon-lab:before {
+  content: "2";
+}
+.icon-food:before {
+  content: "3";
+}
+.icon-params:before {
+  content: "4";
+}
+.icon-phone:before {
+  content: "5";
+}
+.icon-tv:before {
+  content: "6";
+}
+.icon-camera:before {
+  content: "7";
+}
+.icon-megaphone:before {
+  content: "8";
+}
+.icon-music:before {
+  content: "9";
+}
+.icon-paperplane:before {
+  content: "a";
+}
+.icon-heart:before {
+  content: "b";
+}
+.icon-bulb:before {
+  content: "c";
+}
+.icon-like:before {
+  content: "d";
+}
+.icon-clock:before {
+  content: "e";
+}
+.icon-location:before {
+  content: "f";
+}
+.icon-truck:before {
+  content: "g";
+}
+.icon-settings:before {
+  content: "h";
+}
+.icon-video:before {
+  content: "i";
+}
+.icon-star:before {
+  content: "j";
+}
+.icon-power:before {
+  content: "k";
+}

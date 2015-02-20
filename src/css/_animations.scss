@@ -64,8 +64,8 @@
   }
 
   60% {
-    transform: translate(-45%, -45%) rotate3d(0, 0, 1, 5deg);
-    transition-timing-function: ease-in-out;
+    transform: translate(-49%, -49%) rotate3d(0, 0, 1, 1deg);
+    transition-timing-function: ease-in;
 
   }
 
@@ -80,7 +80,7 @@
 
 
 .game-options {
-  animation: wobble 5s infinite;
+  animation: wobble 3s infinite;
 }
 
 
