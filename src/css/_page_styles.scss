@@ -12,35 +12,34 @@
 // Giving the Initial Page Colors and Styles
 
 .main-container,
-.new-game-container {
+.game-container {
     background-color: $hilight-color;
     width: 100%;
     position: absolute;
     padding: 3em;
-
 }
 
 .main-container {
   height: 100%;
 }
 
-.easy-game-container:after {
+.game-container:after {
   content: " ";
   display: block;
   height: 100%;
 }
 
-.easy-game-wrapper {
+.game-wrapper {
   background-color: $game-color;
   padding-bottom: 2em;
 }
 
-.game-box {
-  max-width: 1080px;
+.game-head {
   margin: 0 auto;
+  text-align: center;
 }
 
-.new-game-container {
+.game-container {
   background-color: $game-color;
 }
 
@@ -66,6 +65,7 @@
   border: 5px solid white;
   margin-top: 1em;
   padding: 1em;
+  box-sizing: border-box;
 }
 
 .twist-counter {
@@ -92,8 +92,27 @@
   float: right;
 }
 
+.game-title {
+  position: relative;
+}
+
+.quit-game {
+  display: none;
+}
+
+.game-title:hover {
+  .quit-game {
+    display: block;
+    position: absolute;
+    top: 1;
+    bottom: 1;
+    left: 1;
+    right: 1;
+  }
+}
+
 // Styling the Cards
-.game-container {
+.game-board {
   margin-top: 7em;
   width: 100%;
 }
@@ -108,16 +127,27 @@
 
 }
 
-.easy {
+.easy-tile {
   width: 16.666%;
   padding-top: 16.666%;
 
   // making adjustments for page width changes
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
     width: 33.333%;
     padding-top: 33.333%;
+    font-size: 1.5em;
   }
+}
 
+.hard-tile {
+  width: 12.5%;
+  padding-top: 12.5%;
+  font-size: 1.5em;
+  @media only screen and (max-width: 600px) {
+    width: 25%;
+    padding-top: 25%;
+    font-size: 1em;
+  }
 }
 
 
