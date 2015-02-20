@@ -1,5 +1,9 @@
 $(function () {
 
+  // # TODO:
+  // set up templates for game screen
+  // Connect Game into routes
+
   app.router.add('', function() {
     console.log('yo man');
   });
