@@ -1,27 +1,20 @@
 $(function () {
 
-  // # TODO:
-  // set up templates for game screen
-  // Connect Game into routes
-
   app.router.add('', function() {
-    console.log('yo man');
+    app.manager.goTo('newgame', {});
   });
 
   app.router.add('game/easy', function() {
-    console.log('easy game');
+    app.manager.goTo('easygame');
   });
 
   app.router.add('game/hard', function() {
-    console.log('hard game');
+    app.manager.goTo('hardgame');
   });
 
   app.router.add('game/win', function() {
     console.log('you win!!');
   });
-
-
-
 
   function processHash() {
     var hash = location.hash || '#';

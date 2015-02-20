@@ -34,15 +34,16 @@
   padding-bottom: 2em;
 }
 
-.game-head {
-  margin: 0 auto;
+.game-head,
+.game-board {
   text-align: center;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .game-container {
   background-color: $game-color;
 }
-
 
 // Lay out game options using translate to help center the main options
 .game-options, .new-game-container {

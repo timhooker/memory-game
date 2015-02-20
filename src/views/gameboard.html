@@ -1,0 +1,23 @@
+  <div class="game-head">
+
+    <h1 class="game-title">Mem<span class="icon-bulb"></span>ry
+      <a href="index.html">
+        <p class="quit-game">QUIT</p>
+      </a>
+    </h1>
+    <div class="game-icons">
+      <p>
+        bbbbbbbb
+      </p>
+    </div>
+
+    <div class="time-counter">
+      <p>
+        00:00:20
+      </p>
+    </div>
+  </div>
+
+  <div class="game-board">
+    <%= app.views.gametiles({ deck: m.deck, level: m.level}) %>
+  </div>
