@@ -14,13 +14,8 @@ app.memoryGame = function() {
     // When you click on a second tile
     var prevChar = app.previous.next().children('.game-icon').text();
     var thisChar = tile.next().children('.game-icon').text();
-
-    console.log('that: ' + prevChar + ' this: ' + thisChar);
-
     // compare the value to the first tile
     if (prevChar === thisChar) {
-
-      console.log('matched');
       // if matches
         // add a class to the tile that lets us know they match
       tile.addClass('matched');
@@ -30,6 +25,7 @@ app.memoryGame = function() {
         // enable remaining tiles
       app.previous = undefined;
 
+      // see if we win and show screen if we do
       if($('.matched').length === $('.game-checkbox').length) {
         window.location = '#game/win';
       }
@@ -37,9 +33,16 @@ app.memoryGame = function() {
     } else {
     // if doesn't match
       // timeout(turn the tiles back over)
+      var lives = $('.game-icons p');
+      var count = lives.text().length;
+      if(count <= 1) {
+        window.location = '#game/lose';
+        decrement();
+        return;
+      }
+      // decrement the count and see if we lose
+      decrement();
       window.setTimeout(flipOver, 1000);
-      // decrement the count
-
     }
     function flipOver() {
       tile.prop('checked', false);
@@ -48,7 +51,10 @@ app.memoryGame = function() {
       app.previous.attr('disabled', false);
       app.previous = undefined;
     }
-
+    function decrement() {
+      var current = lives.text().slice(0, count - 1);
+      lives.text( current );
+    }
   });
 
 };
