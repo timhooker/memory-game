@@ -20,11 +20,11 @@ $(function() {
 
   app.manager.registerPage('easygame', function() {
     $.get('views/gameboard.html').done(function(html){
-       var gameboard = _.template(html, { variable: 'm' });
-       // generate deck of cards & pass into template
-       var deck = app.gameDeck('9');
-       $('main').html(gameboard({deck: deck, level: 'easy-tile'}));
-       $('main').attr('class', 'game-container');
+      var gameboard = _.template(html, { variable: 'm' });
+      // generate deck of cards & pass into template
+      var deck = app.gameDeck('9');
+      $('main').html(gameboard({deck: deck, level: 'easy-tile'}));
+      $('main').attr('class', 'game-container');
     }).fail(function(obj, text, err) {
       console.log('could not find gameboard');
     });

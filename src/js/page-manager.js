@@ -6,6 +6,7 @@ app.PageManager = function () {
 
       // Where do we store the templates??
       app.views[name] = callback;
+
     },
 
     goTo: function(name, data) {
