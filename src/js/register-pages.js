@@ -25,6 +25,7 @@ $(function() {
       var deck = app.gameDeck('9');
       $('main').html(gameboard({deck: deck, level: 'easy-tile'}));
       $('main').attr('class', 'game-container');
+      app.timer();
     }).fail(function(obj, text, err) {
       console.log('could not find gameboard');
     });
