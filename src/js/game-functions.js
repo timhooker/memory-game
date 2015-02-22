@@ -3,6 +3,9 @@ app.memoryGame = function() {
   $('.game-checkbox').on('change', function(e) {
     // When you click on a tile (:checked)
     var tile = $(this);
+    var lives = $('.game-icons p');
+    var count = lives.text().length;
+
     tile.attr('disabled', true);
 
     if (!app.previous) {
@@ -25,23 +28,34 @@ app.memoryGame = function() {
         // enable remaining tiles
       app.previous = undefined;
 
+
       // see if we win and show screen if we do
-      if($('.matched').length === $('.game-checkbox').length) {
-        window.location = '#game/win';
+      if(lives === $('.game-checkbox').length) {
+        var result = {
+          time: app.timer + 's',
+          result: 'You Win!!',
+          score: count,
+          class: 'game-win'
+        };
+        app.manager.goTo('result', result);
       }
 
     } else {
     // if doesn't match
       // timeout(turn the tiles back over)
-      var lives = $('.game-icons p');
-      var count = lives.text().length;
+      decrement();
       if(count <= 1) {
-        window.location = '#game/lose';
-        decrement();
+        var result = {
+          time: app.timer + 's',
+          result: 'You Lose!!',
+          score: 0,
+          class: 'game-win'
+        };
+        app.manager.goTo('result', result);
+
         return;
       }
       // decrement the count and see if we lose
-      decrement();
       window.setTimeout(flipOver, 1000);
     }
     function flipOver() {

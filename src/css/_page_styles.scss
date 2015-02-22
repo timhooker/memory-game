@@ -59,6 +59,9 @@
   transform: translate(-50%, -50%);
 }
 
+.game-icon {
+  transition-property: opacity .5s linear;
+}
 
 
 // Game Choice Controls have 2 classes. One for basic styling and one to delimit the options.
@@ -103,6 +106,7 @@
   left: 50%;
   transform: translate(-50%, 0%);
   transition: opacity .2s ease-in;
+  color: $hilight-color;
 }
 
 .game-title:hover {
@@ -124,7 +128,6 @@
   border-right: 0;
   border-bottom: 0;
   float: left;
-
 }
 
 .easy-tile {
@@ -159,7 +162,8 @@
   opacity: 0;
 }
 
-.game-card {
+.game-card,
+.card-back {
   display: block;
   position: absolute;
   top: 1px;
@@ -167,10 +171,43 @@
   right: 1px;
   bottom: 1px;
   border-radius: .25em;
-  background: #7986cb;
+  background: $blue;
+}
+
+.card-back {
+  background: url('../img/skulls.png');
+  opacity: .3;
+  transition-property: all .5s linear;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: .25em;
 
 }
 
+.game-result-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.game-result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background-color: #aaa;
+  width: 26em;
+  border-radius: .25em;
+
+}
 
 /*                    *\
     MEDIA QUERIES

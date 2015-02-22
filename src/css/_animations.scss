@@ -1,14 +1,14 @@
 @keyframes color-flux {
   0% {
-    background-color: $hilight-color;
+    background-color: $game-color;
   }
 
   50% {
-    background-color: mix($hilight-color, $game-color, 75%)
+    background-color: mix($game-color, $hilight-color, 75%)
   }
 
   100% {
-    background-color: $hilight-color;
+    background-color: $game-color;
   }
 
 }
@@ -86,22 +86,32 @@
 
 .game-checkbox:not(:checked) {
 
-  & + .game-card .game-icon {
-    opacity: 0;
-
+  & + .game-card {
+    .game-icon {
+      opacity: 0;
+    }
+    .card-back {
+      opacity: .7;
+    }
   }
 
   & + .game-card {
     animation: flip-out-y .5s forwards;
   }
-
 }
 
 .game-checkbox:checked  {
-    & + .game-card .game-icon {
+  & + .game-card {
+    .game-icon {
       opacity: 1;
     }
-    & + .game-card {
-      animation: flip-in-y .5s forwards;
-    }
+    // .card-back {
+    //   opacity: 0;
+    // }
+  }
+
+
+  & + .game-card {
+    animation: flip-in-y .5s forwards;
+  }
 }

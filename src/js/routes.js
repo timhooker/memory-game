@@ -14,14 +14,9 @@ $(function () {
     window.setTimeout(app.memoryGame, 500);
   });
 
-  app.router.add('game/win', function() {
-    console.log('you win!!');
+  app.router.add('game/result', function() {
+    app.manager.goTo('result');
   });
-
-  app.router.add('game/lose', function() {
-    console.log('you lose!!');
-  });
-
 
   app.processHash = function() {
     var hash = location.hash || '#';

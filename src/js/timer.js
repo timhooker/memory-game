@@ -1,10 +1,10 @@
 app.timer = function() {
-  var timer = 0;
+  app.timer = 0;
   var seconds = 0;
 
   function showInt() {
-    ++timer;
-    var minutes = Math.floor(timer/60);
+    ++app.timer;
+    var minutes = Math.floor(app.timer/60);
     ++seconds;
 
     if (minutes > 59) {
@@ -24,5 +24,6 @@ app.timer = function() {
   window.addEventListener('hashchange', function() {
 
     clearInterval(timerInt);
+    app.timer=0;
   });
 };

@@ -42,6 +42,16 @@ $(function() {
       console.log('could not find gameboard');
     });
   });
+  app.manager.registerPage('result', function(result) {
+    $.get('views/game-over.html').done(function(html){
+       var gameover = _.template(html, { variable: 'm' });
+       // generate deck of cards & pass into template
+       $('main').append(gameover({item:result}));
+      //  $('main').attr('class', 'game-container');
+    }).fail(function(obj, text, err) {
+      console.log('could not find gameboard');
+    });
+  });
 
 
 });
