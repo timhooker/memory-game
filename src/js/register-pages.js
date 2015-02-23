@@ -16,6 +16,7 @@ $(function() {
     $.get('views/gametiles.html').done(function(html){
       var template = _.template(html, { variable: 'm' });
       var gametiles = template({deck: deck});
+      console.log(gametiles);
       $('.game-board').html(gametiles);
     }).fail(function(obj, text, err) {
       console.log('could not find gametiles');
