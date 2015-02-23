@@ -18,7 +18,7 @@ $(function() {
       var gametiles = template({deck: deck});
       $('.game-board').html(gametiles);
     }).fail(function(obj, text, err) {
-      console.log(err);
+      console.log('could not find gametiles');
     });
   });
 
@@ -64,7 +64,7 @@ $(function() {
        $('main').append(gameover({item:result}));
       //  $('main').attr('class', 'game-container');
     }).fail(function(obj, text, err) {
-      console.log('could not find gameboard');
+      console.log('could not find results page');
     });
   });
 
