@@ -35,11 +35,13 @@ $(function() {
 
   app.manager.registerPage('hardgame', function() {
     $.get('views/gameboard.html').done(function(html){
-       var gameboard = _.template(html, { variable: 'm' });
-       // generate deck of cards & pass into template
-       var deck = app.gameDeck('16');
-       $('main').html(gameboard({deck: deck, level: 'hard-tile'}));
-       $('main').attr('class', 'game-container');
+      var gameboard = html;
+      // generate deck of cards & pass into template
+      var deck = app.gameDeck('16');
+      var gametile = app.views.gametiles({deck: deck, level: 'hard-tile'});
+      $('main').html(gameboard);
+      $('main').attr('class', 'game-container');
+      $('main').append(gametile);
     }).fail(function(obj, text, err) {
       console.log('could not find gameboard');
     });
