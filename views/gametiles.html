@@ -1,1 +1,1 @@
-<div class=game-board><% m.deck.foreach(function(card)="" {="" %=""><label class="game-tile <%- m.level %>"><input type=checkbox class=game-checkbox> <span class=game-card><span class=card-back></span> <span class=game-icon><%- card="" %=""></%-></span></span></label><% });="" %=""></%></%></div>
+<% m.deck.tiles.foreach(function(tile)="" {="" %=""><label class="game-tile <%- m.deck.level %>"><input type=checkbox class=game-checkbox> <span class=game-card><span class=card-back></span> <span class=game-icon><%- tile="" %=""></%-></span></span></label><% });="" %=""></%></%>
