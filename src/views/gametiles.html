@@ -1,17 +1,14 @@
 <!-- Game board template -->
   <!-- put me in a loop -->
-  <div class="game-board">
-    <% m.deck.forEach(function(card) { %>
+    <% m.deck.tiles.forEach(function(tile) { %>
 
-      <label class="game-tile <%- m.level %>">
+      <label class="game-tile <%- m.deck.level %>">
         <input type="checkbox" class="game-checkbox">
         <span class="game-card">
           <span class="card-back">
           </span>
-          <span class="game-icon"><%- card %></span>
+          <span class="game-icon"><%- tile %></span>
         </span>
       </label>
 
     <% }); %>
-
-  </div>

@@ -208,8 +208,24 @@
   background-color: #aaa;
   width: 26em;
   border-radius: .25em;
+  text-align: center;
 
 }
+
+button {
+  padding: .75em;
+  font-size: 2em;
+  font-family: 'Squada One';
+  border: none;
+  color: white;
+  background-color: $blue;
+
+  &:active {
+    background-color: $grayblue;
+  }
+}
+
+
 
 /*                    *\
     MEDIA QUERIES

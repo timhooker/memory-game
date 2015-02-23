@@ -12,15 +12,28 @@ $(function() {
     });
   });
 
+  app.manager.registerPage('gametiles', function(deck) {
+    $.get('views/gametiles.html').done(function(html){
+      var template = _.template(html, { variable: 'm' });
+      var gametiles = template({deck: deck});
+      $('.game-board').html(gametiles);
+    }).fail(function(obj, text, err) {
+      console.log(err);
+    });
+  });
+
+
   app.manager.registerPage('easygame', function() {
     $.get('views/gameboard.html').done(function(html){
-      var gameboard = html;
+      var template = _.template(html, { variable: 'm' });
       // generate deck of cards & pass into template
-      var deck = app.gameDeck('9');
-      var gametile = app.views.gametiles({deck: deck, level: 'easy-tile'});
-      $('main').html(gameboard);
+      var deck = {
+        tiles: app.gameDeck('9'),
+        level: 'easy-tile'
+      };
+      $('main').html(template());
       $('main').attr('class', 'game-container');
-      $('main').append(gametile);
+      app.views.gametiles(deck);
       app.timer();
     }).fail(function(obj, text, err) {
       console.log('could not find gameboard');
@@ -29,17 +42,21 @@ $(function() {
 
   app.manager.registerPage('hardgame', function() {
     $.get('views/gameboard.html').done(function(html){
-      var gameboard = html;
+      var template = _.template(html, { variable: 'm' });
       // generate deck of cards & pass into template
-      var deck = app.gameDeck('16');
-      var gametile = app.views.gametiles({deck: deck, level: 'hard-tile'});
-      $('main').html(gameboard);
+      var deck = {
+        tiles: app.gameDeck('16'),
+        level: 'hard-tile'
+      };
+      $('main').html(template());
       $('main').attr('class', 'game-container');
-      $('main').append(gametile);
+      app.views.gametiles(deck);
+      app.timer();
     }).fail(function(obj, text, err) {
       console.log('could not find gameboard');
     });
   });
+
   app.manager.registerPage('result', function(result) {
     $.get('views/game-over.html').done(function(html){
        var gameover = _.template(html, { variable: 'm' });
@@ -50,12 +67,5 @@ $(function() {
       console.log('could not find gameboard');
     });
   });
-
-  $.get('views/gametiles.html').done(function(html){
-    app.views.gametiles = _.template(html, { variable: 'm' });
-  }).fail(function(obj, text, err) {
-    console.log(err);
-  });
-
 
 });

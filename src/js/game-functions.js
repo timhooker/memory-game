@@ -31,13 +31,13 @@ app.memoryGame = function() {
 
       // see if we win and show screen if we do
       if(lives === $('.game-checkbox').length) {
-        var result = {
-          time: app.timer + 's',
+        var win = {
+          time: app.time + 's',
           result: 'You Win!!',
           score: count,
           class: 'game-win'
         };
-        app.manager.goTo('result', result);
+        app.manager.goTo('result', win);
       }
 
     } else {
@@ -45,13 +45,13 @@ app.memoryGame = function() {
       // timeout(turn the tiles back over)
       decrement();
       if(count <= 1) {
-        var result = {
-          time: app.timer + 's',
+        var lose = {
+          time: app.time + 's',
           result: 'You Lose!!',
           score: 0,
           class: 'game-win'
         };
-        app.manager.goTo('result', result);
+        app.manager.goTo('result', lose);
 
         return;
       }
