@@ -1,1 +1,15 @@
-<% for (var i=0; < m.deck.tiles.length; ++i) { %><% console.log(m.deck.tiles[i]) %><label class="game-tile <%- m.deck.level %>"><input type=checkbox class=game-checkbox> <span class=game-card><span class=card-back></span> <span class=game-icon><%- m.deck.tiles[i] %></%-></span></span></label><% } %></%></%></%>
+<!-- Game board template -->
+  <!-- put me in a loop -->
+    <% for (var i = 0; i < m.deck.tiles.length; ++i) { %>
+      <% console.log(m.deck.tiles[i]) %>
+
+      <label class="game-tile <%- m.deck.level %>">
+        <input type="checkbox" class="game-checkbox">
+        <span class="game-card">
+          <span class="card-back">
+          </span>
+          <span class="game-icon"><%- m.deck.tiles[i] %></span>
+        </span>
+      </label>
+
+    <% } %>
