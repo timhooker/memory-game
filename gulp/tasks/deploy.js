@@ -5,10 +5,10 @@ var gulp = require('gulp'),
     config = require('../config');
 
 gulp.task('deploy', ['clean'], function () {
-  return gulp.start('assets', 'html:release', 'bust-cache', 'push-gh-pages');
+  return gulp.start('assets', 'html', 'push-gh-pages');
 });
 
-gulp.task('push-gh-pages', ['assets', 'html:release', 'bust-cache'], function () {
+gulp.task('push-gh-pages', ['assets', 'html'], function () {
   return gulp.src(config.dest.root + '/**/*')
     .pipe(deploy());
 });
